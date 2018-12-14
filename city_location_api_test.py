@@ -21,7 +21,7 @@ def city_location_api_test():
         r = requests.get(DataFactory.end_point, headers=http_request_header, params=params)
         print(r.url)
 
-        if 'OK' != r.status_code:
+        if 200 != r.status_code:
             status_code_flag = False
         if '' == r.text:
             response_content_flag = False
