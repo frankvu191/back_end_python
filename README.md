@@ -21,4 +21,11 @@ a. Run [allure serve allure-result] to view Allure report
 b. Screen capture for run test in local and in Jenkins(open the link by browser has flash installed) 
 https://screencast.com/t/5QgUwjgCOC  
 https://screencast.com/t/TnJIyJJuMBhN  
-https://screencast.com/t/1chewX4AtnCk
+https://screencast.com/t/1chewX4AtnCk  
+
+# Framework  
+1. The framework consists of Behave(BDD framework for Python), Allure-Behave report and 'requests' library  
+2. Behave uses tests written in a natural language style, backed up by Python code. It is easy for collaboration between developers, QA and non-technical or business participants in a project.  
+3. Requests is a Python HTTP library used for sending requests to API  
+4. Allure-Behave report provides informative and detailed Behave test result. It supports different CI like Jenkins, Bamboo, TeamCity  
+  
