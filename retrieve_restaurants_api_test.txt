@@ -11,11 +11,33 @@ Feature: Restaurants API test
 
   Scenario: Create restaurant with valid info
     Given the endpoint is "restaurant-api.test/restaurants"
-    When I send POST request with
-    Then I should see status code is 200
+    When I send POST request with valid "<name>", "<address>", "<owner>" in request message
+    Then I should see status code is 201
     And I should see the response is not empty
     And I should see "name" field in the response
     And I should see "address" field in the response
     And I should see "owner" field in the response
 
+  Scenario: Create restaurant with missing info
+    Given the endpoint is "restaurant-api.test/restaurants"
+    When I send POST request with missing "<name>", "<address>", "<owner>" in request message
+    Then I should see status code is 400
+    And I should see the response contains error message
 
+  Scenario: Create restaurant with no info
+    Given the endpoint is "restaurant-api.test/restaurants"
+    When I send POST request with no "<name>", "<address>", "<owner>" in request message
+    Then I should see status code is 400
+    And I should see the response contains error message
+
+  Scenario: Create restaurant with invalid info
+    Given the endpoint is "restaurant-api.test/restaurants"
+    When I send POST request with invalid "<name>", "<address>", "<owner>"
+    Then I should see status code is 400
+    And I should see the response contains error message
+
+  Scenario: Create restaurant with missing info
+    Given the endpoint is "restaurant-api.test/restaurants"
+    When I send POST request with missing "<name>", "<address>", "<owner>"
+    Then I should see status code is 400
+    And I should see the response contains error message
