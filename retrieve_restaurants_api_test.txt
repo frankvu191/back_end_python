@@ -35,3 +35,9 @@ Feature: Restaurants API test
     When I send POST request with invalid "<name>", "<address>", "<owner>"
     Then I should see status code is 400
     And I should see the response contains error message
+
+  Scenario: Create restaurant with existing restaurant info
+    Given the endpoint is "restaurant-api.test/restaurants"
+    When I send POST request with existing restaurant "<name>", "<address>", "<owner>"
+    Then I should see status code is 400
+    And I should see the response contains error message
